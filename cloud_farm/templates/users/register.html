@@ -1,0 +1,35 @@
+
+
+{% extends 'users/base.html' %}
+{% load static %}
+{% block content %}
+<!-- content -->
+<div class="container">
+<div class="main">
+	
+	<!-- start registration -->
+	<div class="registration">
+		
+	<div class="registration_left">
+		<h4  style="color: green">{{msg}}</h4>
+		<h2>New customer?</h2>
+		 <div class="registration_form">
+
+		 <!-- Form -->
+		<form enctype="multipart/form-data" method="POST"  action="/user/regload/">
+			{% csrf_token %}
+<div><label>Name:<input type="text" name="name" required ></label></div>
+<div><label>Mobile No:<input type="text" name="mobile" required ></label></div>
+<div><label>Email id:<input type="text" name="email" required ></label></div>
+<div><label>User Name:<input type="text" name="uname" required ></label></div>
+<div><label>Password:<input type="password" name="password" required ></label></div>
+<div ><label><input type="submit" value="Register" name="btn" id="register-submit"></label></div>
+<div class="footer">
+	<div class="container">
+	
+	
+		<div class="clearfix"> </div>
+			<p>Copyrights ? 2015 Gretong. All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
+	</div>
+</div>
+{% endblock %}
