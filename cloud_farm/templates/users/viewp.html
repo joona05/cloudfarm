@@ -1,0 +1,68 @@
+{% extends 'users/loginbase.html' %}
+{% load static %}
+{% block content %}
+
+<div><label><h3 style="color: green" > Product</h3> </label></div>
+	
+	
+		
+	<div class="panel panel-default">
+									<div class="panel-heading">Product Info</div>
+
+									<div class="panel-body">
+	
+<!-- <form method="post" action="/user/mkorder/" class="form-horizontal" enctype="multipart/form-data">
+	{% csrf_token %} -->
+	<div class="grids_of_4" style="margin-left: 500px" id="contents">
+		
+		{% for x in data %}
+		
+		  <div class="grid1_of_4">
+				<div class="content_box"><a href="details.html">
+			   	   	 <img src="{{x.PID.Photo.url}}"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+			   	   	 
+				   	  </a>
+					<div style="border-width: 2px">		    
+				   
+				     <h2>Name                  :{{x.PID.Name}}</h2>
+				     <h3>Description           :{{x.PID.Description}}</h3>
+				     <h5>Price                 :{{x.PID.Price}}</h5>
+				     <h5>Old Price             :{{x.PID.Old_Price}}</h5>
+				     <h5>Available Quantity(Kg):{{x.PID.Quantity}}</h5>
+				     <h5>Ordered Quantity(Kg)  :{{x.Quantity}}</h5>
+				     <h5>Catogory              :{{x.PID.Catogory}}</h5>
+				     <p>SupplierID             :{{x.PID.SupplierID}}</p>
+				     </div>
+					 <div class="grid_1 simpleCart_shelfItem">
+				    
+					 <div class="item_add"><span class="item_price"><h6>ONLY Rs.{{x.Price}}</h6></span></div>
+					<div class="item_add"><span class="item_price"><a href="/user/morder/?pid={{x.id}}&sid={{x.SupplierID}}">Buy Now</a></span></div>
+					 </div>
+			   	</div></br></br>
+			</div>
+
+			
+		{% endfor %}
+		
+
+
+		
+		</div>
+
+
+
+											<!-- <div class="form-group">
+												<div class="col-sm-8 col-sm-offset-2">
+													<button class="btn btn-default" type="reset">Cancel Order</button>
+													<button class="btn btn-primary" name="submit" type="submit">Order</button>
+												</div>
+											</div>
+ -->
+										</form>
+									</div>
+								</div>
+
+	
+
+
+{% endblock %}

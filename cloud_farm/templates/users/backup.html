@@ -1,0 +1,83 @@
+{% extends 'users/loginbase.html' %}
+{% load static %}
+{% block content %}
+	
+	<div class="registration_left">
+		<h2>Customer Login</h2>
+
+			<div class="container-fluid">
+
+				<div class="row">
+					<div class="col-md-12">
+
+						<h2 class="page-title">Product For You</h2>
+						<h2 style="color: red" class="page-title">{{z}}</h2>
+
+
+<div class="panel panel-default">
+							<div style="color: blue" class="panel-heading">Product Details</div>
+							<div class="panel-body">
+															<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+									<thead>
+										<tr>
+										<th>#</th>
+											<th>Name</th>
+											<th>Supplier ID</th>
+											<th>Description</th>
+											<th>Price</th>
+											<th>Old_Price</th>
+											<th>Quantity</th>
+											<th>Catogory</th>
+											<th>Image</th>
+											<th>Order</th>
+										</tr>
+									</thead>
+
+
+									</thead>
+									{% for x in data %}
+									<tbody>
+
+																			<tr>
+											<td>{{x.id}}</td>
+											<td>{{x.Name}}</td>
+											{% for z in y %}
+											<td>{{z.id}}</td>
+											
+											<td>{{x.Description}}</td>
+											<td>{{x.Price}}</td>
+											<td>{{x.Old_Price}}</td>
+											<td>{{x.Quantity}}</td>
+											<td>{{x.Catogory}}</td>
+											<td>{{x.Photo}}</td>
+											<td> <a href="/user/mkorder/?pid={{x.id}}&sid={{z.id}}">Make an Order</a></td>
+											{% endfor %}
+											<!-- <td>{{x.uname}}</td> -->
+										<!-- <td><a href="/admin/conform/?id={{x.id}}" onclick="return confirm('Do you really want to Confirm this booking')"> Confirm</a> 
+ -->
+
+<!-- <a href="manage-bookings.php?eid=1" onclick="return confirm('Do you really want to Cancel this Booking')"> Cancel</a> -->
+</td>
+
+								
+										</tr>
+
+
+										</tbody>
+										{% endfor %}
+								</table>
+
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+{% endblock %}

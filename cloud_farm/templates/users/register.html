@@ -12,13 +12,14 @@
 		
 	<div class="registration_left">
 		<h4  style="color: green">{{msg}}</h4>
-		<h2>New customer?</h2>
+		<h2>New Customer?</h2>
 		 <div class="registration_form">
 
 		 <!-- Form -->
 		<form enctype="multipart/form-data" method="POST"  action="/user/regload/">
 			{% csrf_token %}
 <div><label>Name:<input type="text" name="name" required ></label></div>
+<div><label>Address:<textarea name="address" rows="3" required></textarea></label></div>
 <div><label>Mobile No:<input type="text" name="mobile" required ></label></div>
 <div><label>Email id:<input type="text" name="email" required ></label></div>
 <div><label>User Name:<input type="text" name="uname" required ></label></div>

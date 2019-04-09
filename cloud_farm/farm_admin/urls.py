@@ -4,6 +4,18 @@ from farm_admin import views
 urlpatterns = [
     # url(r'^start/',ld),
     url(r'^$',views.admin_login),
+    url(r'^unaprove/$',views.unaprove),
+    url(r'^aprove/$',views.aprove),
+    url(r'^conform/$',views.conform),
+    url(r'^product/$',views.product),
+    url(r'^user/$',views.user),
+    url(r'^chpsw/$',views.chpsw),
+
+
+
+    
+
+    
     # url(r'^regload/$',views.register),
     # url(r'^logload/$',views.login),
     # url(r'^signup/(?P<num>[0-3]+)/$',views.signup),

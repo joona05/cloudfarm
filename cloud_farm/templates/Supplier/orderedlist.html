@@ -1,0 +1,100 @@
+{% extends 'Supplier/loginbase.html' %}
+{% load static %}
+{% block content %}
+
+	<div class="container-fluid">
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="clearfix"> </div>
+
+						<h2 class="page-title">Ordered Product</h2>
+						<h2 style="color: red" class="page-title">{{z}}</h2>
+						<div class="search">
+		   <!--  <form method="post" action="/supplier/search/" class="form-horizontal" enctype="multipart/form-data">
+		    	{% csrf_token %}
+		    	<input type="text" name="srch"  placeholder="search...">
+				<button class="btn btn-primary" name="search" type="submit">search</button>
+			</form> -->
+		</div>
+
+	</br></br>
+<div class="panel panel-default">
+							<div class="panel-heading">Product Details</div>
+							<div class="panel-body">
+															<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+									<thead>
+									
+										<tr>
+											<th>#</th>
+											<th>Product ID</th>
+											<th>Product Name</th>
+											<th>Price</th>
+											<th>Old Price</th>
+											<th>Available Quantity(Kg)</th>
+											<th>User ID</th>
+											<th>User Name</th>
+											<th>Address</th>
+											<th>Email</th>
+											<th>Mobile</th>
+											<th>Order Quantity(Kg)</th>
+											
+										</tr>
+									</thead>
+
+
+									</thead>
+									{% for x in data %}
+									<tbody>
+
+																			<tr>
+											<td>{{x.id}}</td>
+											<td>{{x.PID.id}}</td>
+											<td>{{x.PID.Name}}</td>
+											
+											<td>{{x.PID.Price}}</td>
+											
+											<td>{{x.PID.Old_Price}}</td>
+											<td>{{x.PID.Quantity}}</td>
+											<td>{{x.UID.id}}</td>
+											<td>{{x.UID.name}}</td>
+											<td>{{x.UID.address}}</td>
+											<td>{{x.UID.email}}</td>
+											<td>{{x.UID.mobile}}</td>
+											<td>{{x.Quantity}}</td>
+											
+											
+											
+											
+											<!-- <td>{{x.uname}}</td> -->
+										<!-- <td><a href="/admin/conform/?id={{x.id}}" onclick="return confirm('Do you really want to Confirm this booking')"> Confirm</a> 
+ -->
+
+<!-- <a href="manage-bookings.php?eid=1" onclick="return confirm('Do you really want to Cancel this Booking')"> Cancel</a> -->
+</td>
+
+								
+										</tr>
+
+
+										</tbody>
+										{% endfor %}
+								</table>
+
+
+
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+{% endblock %}

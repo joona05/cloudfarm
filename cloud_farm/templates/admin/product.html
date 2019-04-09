@@ -1,0 +1,59 @@
+{% extends 'admin/dashbase.html' %}
+{% load static %}
+{% block content %}
+
+<div class="panel panel-default">
+							<div class="panel-heading">Product Details</div>
+							<div class="panel-body">
+															<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+									<thead>
+										<tr>
+										<!-- <th>#</th> -->
+											<th>Product ID</th>
+											<th>Name</th>
+											<th>Price</th>
+											<th>Old Price</th>
+											<!-- <th>License</th>
+											<th>GST Number</th>
+											<th>User Name</th> -->
+											<!-- <th>Action</th> -->
+										</tr>
+									</thead>
+
+
+									</thead>
+									{% for x in data %}
+									<tbody>
+
+																			<tr>
+											<td>{{x.id}}</td>
+											<td>{{x.Name}}</td>
+											<td>{{x.Price}}</td>
+											<td>{{x.Old_Price}}</td>
+											<!-- <td>{{x.location}}</td>
+											<td>{{x.license}}</td>
+											<td>{{x.GST_Number}}</td>
+											<td>{{x.uname}}</td> -->
+										<!-- <td><a href="manage-bookings.php?aeid=1" onclick="return confirm('Do you really want to Confirm this booking')"> Confirm</a> /
+
+
+<a href="manage-bookings.php?eid=1" onclick="return confirm('Do you really want to Cancel this Booking')"> Cancel</a>
+</td> -->
+
+
+										</tr>
+
+
+										</tbody>
+										{% endfor %}
+								</table>
+
+
+
+							</div>
+						</div>
+
+
+
+
+{% endblock %}

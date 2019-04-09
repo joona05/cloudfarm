@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'farm_admin.apps.FarmAdminConfig',
+    'supplier.apps.SupplierConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -127,3 +128,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
    ]
 STATIC_URL = '/static/'
+
+# 
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'user_images')
+MEDIA_URL = '/user_images/'

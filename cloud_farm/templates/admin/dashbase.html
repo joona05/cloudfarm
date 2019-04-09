@@ -9,7 +9,7 @@
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 
-<title>Bike Rental Portal | Admin Login</title>
+<title>Farm_Admin | Admin Login</title>
 	<link rel="stylesheet" href="{% static "ad_css/font-awesome.min.css" %}"/>
 	<link rel="stylesheet" href="{% static "ad_css/bootstrap.min.css" %}"/>
 	<link rel="stylesheet" href="{% static "ad_css/dataTables.bootstrap.min.css" %}"/>
@@ -49,7 +49,7 @@
 			<li class="ts-account">
 				<a href="#"><img src="img/ts-avatar.jpg" class="ts-avatar hidden-side" alt=""> Account <i class="fa fa-angle-down hidden-side"></i></a>
 				<ul>
-					<li><a href="change-password.php">Change Password</a></li>
+					<li><a href="/admin/chpsw/">Change Password</a></li>
 					<li><a href="/admin/">Logout</a></li>
 				</ul>
 			</li>
@@ -65,22 +65,25 @@
 			
 <li><a href="#"><i class="fa fa-files-o"></i> Supplier</a>
 <ul>
-<li><a href="#">Approve Supplier</a></li>
-<li><a href="#">View Supplier</a></li>
+<li><a href="/admin/unaprove/">Approve Supplier</a></li>
+<li><a href="/admin/aprove/">View Supplier</a></li>
 </ul>
 </li>
-<li><a href="#"><i class="fa fa-files-o"></i> View Users</a></li>
-<li><a href="#"><i class="fa fa-files-o"></i> View Products</a></li></ul>
-		</nav>	
+<li><a href="/admin/user/"><i class="fa fa-files-o"></i> View Users</a></li>
+<li><a href="/admin/product/"><i class="fa fa-files-o"></i> View Products</a></li></ul>
+		</nav><div class="content-wrapper">
+	
 
 												{% block content %}
 
 												{% endblock %}
 
-<!-- 
-			
+											</div></div>
 
-	<!Loading Scripts -->
+<!--  -->
+			
+	
+	<!-- <!Loading Scripts -->
 	<script src="{% static "ad_js/jquery.min.js" %}"/></script>
 	<script src="{% static "ad_js/bootstrap-select.min.js" %}"/></script>
 	<script src="{% static "ad_js/bootstrap.min.js" %}"/></script>
