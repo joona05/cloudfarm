@@ -1,0 +1,64 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container">
+<div class="main">
+	<!-- start registration -->
+	<div class="registration">
+		
+	<div class="registration_left">
+		<h2>Change Password</h2>
+		<h2 style="color: red">{{m}}</h2>
+		 <div class="registration_form">
+		 <!-- Form -->
+		 <form  method="POST" action="/admin/chpsw/">
+		 	{% csrf_token %}
+
+<div ><label>New Password:<input type="password" name="password" required></label></div>
+<div ><label>Confirm Password:<input type="password" name="password1" required></label></div>
+<div ><label><input type="submit" value="Change Password" name="btn" id="register-submit"></label></div>
+<div style="color: red">{{er_msg}}</div>
+</form>
+
+			
+			<!-- /Form -->
+			</div>
+	</div>
+	<div class="clearfix"></div>
+	</div>
+	<!-- end registration -->
+</div>
+</div>
+<div class="foot-top" style="padding-top:200px">
+	<div class="container">
+		<div class="col-md-6 s-c">
+			<li>
+				<div class="fooll">
+					
+				</div>
+			</li>
+			<li>
+				
+			</li>
+				<div class="clearfix"> </div>
+		</div>
+		<div class="col-md-6 s-c">
+			<div class="stay">
+						
+							<div class="clearfix"> </div>
+			</div>
+		</div>
+			<div class="clearfix"> </div>
+	</div>
+</div>
+<div class="footer">
+	<div class="container">
+	
+	
+		<div class="clearfix"> </div>
+			<p>Copyrights ? 2015 Gretong. All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
+	</div>
+</div>
+{% endblock %}

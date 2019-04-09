@@ -1,0 +1,38 @@
+
+
+{% extends 'supplier/sbase.html' %}
+{% load static %}
+{% block content %}
+<!-- content -->
+<div class="container">
+<div class="main">
+	
+	<!-- start registration -->
+	<div class="registration">
+		
+	<div class="registration_left">
+		<h4  style="color: green">{{msg}}</h4>
+		<h2>New Supplier?</h2>
+		 <div class="registration_form">
+
+		 <!-- Form -->
+		<form enctype="multipart/form-data" method="POST"  action="/supplier/regload/">
+			{% csrf_token %}
+<div><label>Name:<input type="text" name="name" required ></label></div>
+<div><label>Mobile No:<input type="text" name="mobile" required ></label></div>
+<div><label>Email id:<input type="text" name="email" required ></label></div>
+<div><label>location:<input type="text" name="location" required ></label></div>
+<div><label>license:<input type="text" name="license" required ></label></div>
+<div><label>GST_Number:<input type="text" name="GST_Number" required ></label></div>
+<div><label>User Name:<input type="text" name="uname" required ></label></div>
+<div><label>Password:<input type="password" name="password" required ></label></div>
+<div ><label><input type="submit" value="Register" name="btn" id="register-submit"></label></div>
+<div class="footer">
+	<div class="container">
+	
+	
+		<div class="clearfix"> </div>
+			<p>Copyrights ? 2015 Gretong. All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
+	</div>
+</div>
+{% endblock %}

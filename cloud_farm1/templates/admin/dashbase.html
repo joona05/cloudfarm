@@ -1,0 +1,96 @@
+{% load static %}
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="theme-color" content="#3e454c">
+
+<title>Bike Rental Portal | Admin Login</title>
+	<link rel="stylesheet" href="{% static "ad_css/font-awesome.min.css" %}"/>
+	<link rel="stylesheet" href="{% static "ad_css/bootstrap.min.css" %}"/>
+	<link rel="stylesheet" href="{% static "ad_css/dataTables.bootstrap.min.css" %}"/>
+	<link rel="stylesheet" href="{% static "ad_css/bootstrap-social.css" %}"/>
+	<link rel="stylesheet" href="{% static "ad_css/bootstrap-select.css" %}"/>
+	<link rel="stylesheet" href="{% static "ad_css/fileinput.min.css" %}"/>
+	<link rel="stylesheet" href="{% static "ad_css/awesome-bootstrap-checkbox.css" %}"/>
+	<link rel="stylesheet" href="{% static "ad_css/style.css" %}"/>
+  <style>
+		.errorWrap {
+    padding: 10px;
+    margin: 0 0 20px 0;
+    background: #fff;
+    border-left: 4px solid #dd3d36;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+.succWrap{
+    padding: 10px;
+    margin: 0 0 20px 0;
+    background: #fff;
+    border-left: 4px solid #5cb85c;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+		</style>
+
+
+</head>
+
+<body>
+	<div class="brand clearfix">
+	<a href="dashboard.php" style="font-size: 20px;"> Admin Panel</a>  
+		<span class="menu-btn"><i class="fa fa-bars"></i></span>
+		<ul class="ts-profile-nav">
+
+			<li class="ts-account">
+				<a href="#"><img src="img/ts-avatar.jpg" class="ts-avatar hidden-side" alt=""> Account <i class="fa fa-angle-down hidden-side"></i></a>
+				<ul>
+					<li><a href="change-password.php">Change Password</a></li>
+					<li><a href="/admin/">Logout</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="ts-main-content">
+		<nav class="ts-sidebar">
+			<ul class="ts-sidebar-menu">
+			
+				<li class="ts-label">Main</li>
+				<!-- <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li> -->
+<li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+			
+<li><a href="#"><i class="fa fa-files-o"></i> Supplier</a>
+<ul>
+<li><a href="#">Approve Supplier</a></li>
+<li><a href="#">View Supplier</a></li>
+</ul>
+</li>
+<li><a href="#"><i class="fa fa-files-o"></i> View Users</a></li>
+<li><a href="#"><i class="fa fa-files-o"></i> View Products</a></li></ul>
+		</nav>	
+
+												{% block content %}
+
+												{% endblock %}
+
+<!-- 
+			
+
+	<!Loading Scripts -->
+	<script src="{% static "ad_js/jquery.min.js" %}"/></script>
+	<script src="{% static "ad_js/bootstrap-select.min.js" %}"/></script>
+	<script src="{% static "ad_js/bootstrap.min.js" %}"/></script>
+	<script src="{% static "ad_js/jquery.dataTables.min.js" %}"/></script>
+	<script src="{% static "ad_js/dataTables.bootstrap.min.js" %}"/></script>
+	<script src="{% static "ad_js/Chart.min.js" %}"/></script>
+	<script src="{% static "ad_js/fileinput.js" %}"/></script>
+	<script src="{% static "ad_js/chartData.js" %}"/></script>
+	<script src="{% static "ad_js/main.js" %}"/></script>
+
+</body>
+
+</html>

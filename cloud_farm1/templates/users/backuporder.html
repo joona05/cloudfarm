@@ -1,0 +1,121 @@
+{% extends 'users/loginbase.html' %}
+{% load static %}
+{% block content %}
+
+<div><label><h3 style="color: green" >Order The Product</h3> </label></div>
+	
+	
+		
+	<div class="panel panel-default">
+									<div class="panel-heading">Product Info</div>
+
+									<div class="panel-body">
+	
+<form method="post" action="/user/mkorder/" class="form-horizontal" enctype="multipart/form-data">
+	{% csrf_token %}
+	{% for x in data %}
+<div class="form-group">
+
+<!-- car type
+ -->
+ <div class="form-group">
+<label class="col-sm-2 control-label">Product ID<span style="color:red">*</span></label>
+
+<div class="col-sm-3">
+<input type="text" name="productid" style="margin-left: 10px" value="{{x.id}}" class="form-control" readonly required>
+</div>
+
+</div>
+<div class="form-group">
+<label class="col-sm-2 control-label">Product Name<span style="color:red">*</span></label>
+
+<div class="col-sm-3">
+<input type="text" name="productname" style="margin-left: 10px" value="{{x.Name}}" class="form-control" readonly required>
+</div>
+
+</div>
+
+<label class="col-sm-2 control-label">Product Description<span style="color:red">*</span></label>
+<div class="col-sm-4">
+<textarea class="form-control" name="description"  rows="3" readonly="" required>{{x.Description}}</textarea>
+</div>
+
+</div>
+</div>
+
+<div class="hr-dashed"></div>
+<div class="form-group">
+
+</div>
+
+<div class="form-group">
+<label class="col-sm-2 control-label" id="plabel">Price <span style="color:red">*</span></label>
+<div class="col-sm-4">
+<input type="text" name="price" id="price" value="{{x.Price}}" readonly class="form-control" required>
+</div>
+<label class="col-sm-2 control-label">Old Price<span style="color:red">*</span></label>
+<div class="col-sm-4">
+<input type="text" name="oldprice" value="{{x.Old_Price}}" readonly class="form-control" required>
+</div>
+</div>
+
+<div class="form-group">
+<label class="col-sm-2 control-label">Available Quantity (Kg)<span style="color:red">*</span></label>
+
+<div class="col-sm-4">
+<input type="text" name="aquantity" value="{{x.Quantity}}" readonly class="form-control" required>
+</div>
+
+<div class="form-group">
+<label class="col-sm-2 control-label">Product Quantity (Kg)<span style="color:red">*</span></label>
+
+<div class="col-sm-4">
+<input type="text" name="quantity" id="quantity" class="form-control" required onblur="totp(this)">
+</div>
+<label class="col-sm-2 control-label">Product Catogory<span style="color:red">*</span></label>
+<div class="col-sm-4">
+<input type="text" name="catogory" value="{{x.Catogory}}" readonly="" class="form-control" required>
+
+</div>
+{% endfor %}
+<label class="col-sm-2 control-label">Supplier ID<span style="color:red">*</span></label>
+<div class="col-sm-4">
+
+<input type="text" name="Supplierid" value="{{sid}}" readonly class="form-control" required>
+
+</div>
+<label class="col-sm-2 control-label">Total Price<span style="color:red">*</span></label>
+<div class="col-sm-4">
+
+<input type="text" name="tprice" id="tprice"  class="form-control" required>
+
+</div>
+
+</div>
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+											<div class="form-group">
+												<div class="col-sm-8 col-sm-offset-2">
+													<button class="btn btn-default" type="reset">Cancel Order</button>
+													<button class="btn btn-primary" name="submit" type="submit">Order</button>
+												</div>
+											</div>
+
+										</form>
+									</div>
+								</div>
+
+	
+
+
+{% endblock %}

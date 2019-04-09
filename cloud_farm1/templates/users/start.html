@@ -1,0 +1,102 @@
+{% extends 'users/loginbase.html' %}
+{% load static %}
+{% block content %}
+<script type="text/javascript">
+        setTimeout(function() {
+          $('#msg').fadeOut('slow');
+          // $('#msg1').fadeOut('slow');
+        }, 2000);
+          
+  </script>
+<!-- <script type="text/javascript">
+	
+	function getproducts(a,b)
+{
+	alert(a);
+	alert(b);
+
+}
+</script>	 -->
+
+
+<!-- content -->
+<div class="container">
+<div class="women_main">
+	<h2 id="msg" style="color: red">{{z}}</h2>
+<!-- start sidebar -->
+	<div class="col-md-3">
+	  <div class="w_sidebar">
+	
+		<section  class="sky-form" style="height:250px">
+					<h4>Product Categories</h4>
+						<div class="row1 scroll-pane">
+							
+							<div class="col col-4">
+															<label class="checkbox"><input type="checkbox"  value="1" name="checkbox" class="category" onClick="getproducts(this,this.value)"><i></i>Fruit </label>
+																<label class="checkbox"><input type="checkbox"  value="2" name="checkbox" class="category" onClick="getproducts(this,this.value)"><i></i>Grain</label>
+																<label class="checkbox"><input type="checkbox"  value="3" name="checkbox" class="category" onClick="getproducts(this,this.value)"><i></i>Vegitables</label>
+																
+															</div> 
+						</div>
+		</section>
+		
+
+
+		
+		
+		
+	</div>
+   </div>	<!-- start content -->
+	<div class="col-md-9 w_content">
+		<div class="search">
+		    <form method="post" action="/user/search/" class="form-horizontal" enctype="multipart/form-data">
+		    	{% csrf_token %}
+		    	<input type="text" name="srch" placeholder="search...">
+				<input type="submit" value="search">
+			</form>
+		</div>
+		<!-- grids_of_4 -->
+		
+		<div class="grids_of_4" id="contents">
+		
+		{% for x in data %}
+		
+		  <div class="grid1_of_4">
+				<div class="content_box"><a href="/user/mkorder/?pid={{x.id}}&sid={{x.SupplierID}}">
+			   	   	 <img src="{{x.Photo.url}}"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+			   	   	 
+				   	  </a>
+				    <h4><a href="/user/mkorder/?pid={{x.id}}&sid={{x.SupplierID}}"> Quick View</a></h4>
+				    <input type="hidden" name="id" value="{{x.id}}">
+				    <input type="hidden" name="sid" value="{{x.SupplierID}}">
+				    
+				     <p>{{x.Name}}</p>
+					 <div class="grid_1 simpleCart_shelfItem">
+				    
+					 <div class="item_add"><span class="item_price"><h6>ONLY Rs.{{x.Price}}</h6></span></div>
+					<div class="item_add"><span class="item_price"><a href="/user/morder/?pid={{x.id}}&sid={{x.SupplierID}}&Quantity={{x.Quantity}}">Buy Now</a></span></div>
+					 </div>
+			   	</div></br></br>
+			</div>
+
+			
+		{% endfor %}
+		
+
+
+		
+		</div>
+		
+	</div>
+	<div class="clearfix"></div>
+	
+	<!-- end content -->
+</div>
+</div>
+
+ -->
+
+
+
+
+{% endblock %}
